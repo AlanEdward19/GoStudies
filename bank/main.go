@@ -8,7 +8,7 @@ import (
 
 func main() {
 	accountBalance := 1000.0
-	finance.SetBalance(accountBalance)
+	account := finance.NewAccount(accountBalance)
 
 	fmt.Println("Welcome to the bank!")
 	for {
@@ -17,7 +17,7 @@ func main() {
 
 		switch choice {
 		case 1:
-			finance.CheckBalance()
+			account.CheckBalance()
 			break
 
 		case 2:
@@ -34,7 +34,7 @@ func main() {
 				break
 			}
 
-			finance.Deposit(depositAmount)
+			account.Deposit(depositAmount)
 			break
 
 		case 3:
@@ -51,7 +51,7 @@ func main() {
 				break
 			}
 
-			finance.Withdraw(withdrawAmount)
+			account.Withdraw(withdrawAmount)
 			break
 
 		case 4:
